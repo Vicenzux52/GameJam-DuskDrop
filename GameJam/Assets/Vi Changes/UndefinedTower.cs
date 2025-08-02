@@ -9,7 +9,6 @@ public class UndefinedTower : MonoBehaviour
     {
         PrefabOptions.SetActive(false);
         OriginalColor = gameObject.GetComponent<Renderer>().material.color;
-        Debug.Log("Original Color: " + OriginalColor);
     }
 
     // Update is called once per frame
