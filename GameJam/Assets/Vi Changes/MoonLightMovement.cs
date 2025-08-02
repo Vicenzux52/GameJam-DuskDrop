@@ -12,8 +12,8 @@ public class MoonLightMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        HalfMoon.SetActive(false);
-        FullMoon.SetActive(false);
+        if(PlayerPrefs.GetInt("Difficulty")<2)HalfMoon.SetActive(false);
+        if(PlayerPrefs.GetInt("Difficulty")==0)FullMoon.SetActive(false);
         TargetPosition = new Vector3(0.18f, 1, 0.18f);
     }
 
