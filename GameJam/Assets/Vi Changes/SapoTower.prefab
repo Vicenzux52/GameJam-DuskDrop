@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4871634331742953683}
   - component: {fileID: 7836107541874369372}
   m_Layer: 0
-  m_Name: GuaranaTorre
+  m_Name: SapoTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe6ea926415d0ad409853b4cafddfd7d, type: 2}
+  - {fileID: 2100000, guid: a686453979f21864c8817b82f98dbae6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,7 +123,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <TowerName>k__BackingField: Guarana
   <ImageGrid>k__BackingField: {fileID: 0}
-  <UnitPrefab>k__BackingField: {fileID: 4219578010849400167, guid: a05f35a89b999864d8c36b34c0bc260e, type: 3}
-  debugInitiliaze: 0
-  debugRun: 0
-  debugRestart: 0
+  <UnitPrefab>k__BackingField: {fileID: 0}
