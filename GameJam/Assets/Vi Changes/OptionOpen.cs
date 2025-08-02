@@ -28,7 +28,7 @@ public class OptionOpen : MonoBehaviour
         {
             if (transform.localScale.x > OriginalScale.x*0.1f)
             {
-                transform.localScale = Vector3.Lerp(Vector3.zero, transform.localScale, Time.deltaTime * 25);
+                transform.localScale = Vector3.Lerp(Vector3.zero, transform.localScale, Time.deltaTime * 12);
             }
             else
             {

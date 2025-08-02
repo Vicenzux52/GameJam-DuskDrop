@@ -47,7 +47,7 @@ public class Option : MonoBehaviour
             Instantiate(JabuticabaPrefab, transform.parent.parent.position, Quaternion.identity);
             Destroy(transform.parent.parent.gameObject);
         }
-        else if (gameObject.name == "LoboOption ")
+        else if (gameObject.name == "LoboOption")
         {
             Instantiate(LoboPrefab, transform.parent.parent.position, Quaternion.identity);
             Destroy(transform.parent.parent.gameObject);
