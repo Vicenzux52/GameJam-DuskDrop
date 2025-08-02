@@ -44,7 +44,7 @@ public class Option : MonoBehaviour
         }
         else if (gameObject.GetComponent<Material>().name == "Lobo")
         {
-            Instantiate(LoboPrefab, transform.parent.parent.position, Quaternion.identity);
+            Instantiate(LoboPrefab, transform.parent.parent.position, Quaternion.identity); 
         }
         else if (gameObject.GetComponent<Material>().name == "Onca")
         {
