@@ -4,15 +4,15 @@ public class BuffController : MonoBehaviour
 {
     public static BuffController Self { get; private set; }
     public string[] buffsNames { get; private set; } = {
-        "Speed Buff",
-        "Damage Buff",
+        "Damage Buff", //fixed
+        "AtkSpeed Buff", //fixed
         "Range Buff",
         "Health Buff"
     };
     [SerializeField]
     float[] buffsValues = {
-        20f, // Speed Buff
-        50f, // Damage Buff
+        20f, // Damage Buff fixed
+        50f, // AtkSpeed Buff fixed
         30f, // Range Buff
         40f  // Health Buff
     };
