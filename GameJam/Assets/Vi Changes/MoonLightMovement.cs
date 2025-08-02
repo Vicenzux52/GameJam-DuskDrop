@@ -7,15 +7,14 @@ public class MoonLightMovement : MonoBehaviour
     public GameObject HalfMoon;
     public GameObject FullMoon;
     Vector3 TargetPosition;
-    public int LimitX = 4;
-    public int LimitZ = 2;
+    Quaternion TargetRotation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         HalfMoon.SetActive(false);
         FullMoon.SetActive(false);
-        TargetPosition = new Vector3(0, 3, 0);
+        TargetPosition = new Vector3(0.18f, 1, 0.18f);
     }
 
     // Update is called once per frame
@@ -23,33 +22,38 @@ public class MoonLightMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (TargetPosition.z + 2 <= LimitZ)
+            if (TargetPosition.z != 0.18f)
             {
-                TargetPosition += new Vector3(0, 0, 2);
+                TargetPosition.z = 0.18f;
             }
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (TargetPosition.x - 2 >= -LimitX)
+            if (TargetPosition.x != -0.18f)
             {
-                TargetPosition += new Vector3(-2, 0, 0);
+                TargetPosition.x = -0.18f;
             }
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (TargetPosition.z - 2 >= 0)
+            if (TargetPosition.z != -0.18f)
             {
-                TargetPosition += new Vector3(0, 0, -2);
+                TargetPosition.z = -0.18f;
             }
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (TargetPosition.x + 2 <= 0)
+            if (TargetPosition.x != 0.18f)
             {
-                TargetPosition += new Vector3(2, 0, 0);
+                TargetPosition.x = 0.18f;
             }
         }
-        transform.position = new Vector3(Mathf.SmoothStep(transform.position.x, TargetPosition.x, 0.1f),
-        3, Mathf.SmoothStep(transform.position.z, TargetPosition.z, 0.1f));
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TargetRotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y + 90, 0);
+        }
+        transform.localPosition = new Vector3(Mathf.SmoothStep(transform.localPosition.x, TargetPosition.x, 0.1f),
+        1, Mathf.SmoothStep(transform.localPosition.z, TargetPosition.z, 0.1f));
+        transform.rotation = Quaternion.Slerp(transform.rotation, TargetRotation, 0.1f);
     }
 }
