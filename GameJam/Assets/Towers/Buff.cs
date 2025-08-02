@@ -6,9 +6,9 @@ public class Buff : GenericTower
     [field: SerializeField, Description()] public int buffType { get; protected set; }
     [field: SerializeField, Description("Does the buff provided by this tower reset after every eclipse")] bool doesReset = false;
     int timesUsed = 0;
-    public override void Initialize()
+    new void Start()
     {
-        base.Initialize();
+        base.Start();
     }
     public override void Run()
     {

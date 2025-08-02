@@ -5,9 +5,9 @@ using UnityEngine;
 public class Tree : GenericTower
 {
     List<GameObject> treeList = new List<GameObject>();
-    public override void Initialize()
+    new void Start()
     {
-        base.Initialize();
+        base.Start();
     }
     public override void Run()
     {

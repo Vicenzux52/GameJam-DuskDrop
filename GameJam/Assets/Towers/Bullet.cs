@@ -15,6 +15,6 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         if (target == null) Destroy(this.gameObject);
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        else transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 }
