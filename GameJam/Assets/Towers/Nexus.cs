@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Nexus : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Nexus : MonoBehaviour
         life -= damage;
         if (life < 1)
         {
-            //GAMEOVER
+            SceneManager.LoadScene("Lose");
         }
     }
 }
