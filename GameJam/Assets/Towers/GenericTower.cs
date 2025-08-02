@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class GenericTower : MonoBehaviour
 {
     [field: SerializeField] public string TowerName { get; protected set; } = "Generic Tower";
-    [field: SerializeField] public Image ImageGrid { get; protected set; }
+    [field: SerializeField] public Material ImageGrid { get; protected set; }
     [field: SerializeField] public GameObject UnitPrefab { get; protected set; }
     public virtual void Initialize()
     {
@@ -25,9 +25,27 @@ public class GenericTower : MonoBehaviour
     {
         Debug.Log(TowerName + "Restart");
     }
-    /* void Start()
+#if UNITY_EDITOR
+    public bool debugInitiliaze = false;
+    public bool debugRun = false;
+    public bool debugRestart = false;
+    void Update()
     {
-        Initialize();
-        Run();
-    }  */
+        if (debugInitiliaze)
+        {
+            Initialize();
+            debugInitiliaze = false;
+        }
+        if (debugRestart)
+        {
+            Restart();
+            debugRestart = false;
+        }
+        if (debugRun)
+        {
+            Run();
+            debugRun = false;
+        }
+    }
+#endif
 }

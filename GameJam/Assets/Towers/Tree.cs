@@ -16,7 +16,7 @@ public class Tree : GenericTower
     public override void Spawn()
     {
         Debug.Log("nnnnnnnn");
-        //treeList.Add(Instantiate(UnitPrefab, , ));
+        treeList.Add(Instantiate(UnitPrefab,transform.position,Quaternion.identity));
     }
     public override void Restart()
     {
