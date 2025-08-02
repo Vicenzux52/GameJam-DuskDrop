@@ -3,15 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class StartScreen : MonoBehaviour
 {
-    public GameObject StartCanvas;
-    public GameObject CreditsCanvas;
-    public GameObject SelectionCanvas;
+    [SerializeField] GameObject StartCanvas;
+    [SerializeField] GameObject PlayHelpChange;
+    [SerializeField] GameObject Help;
+    [SerializeField] GameObject[] Slideshow;
+    [SerializeField] GameObject SelectionCanvas;
+    [SerializeField] GameObject CreditsCanvas;
+    int index = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         CreditsCanvas.SetActive(false);
         SelectionCanvas.SetActive(false);
         StartCanvas.SetActive(true);
+        PlayHelpChange.SetActive(false);
+        Help.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -25,30 +32,60 @@ public class StartScreen : MonoBehaviour
         CreditsCanvas.SetActive(false);
         SelectionCanvas.SetActive(false);
         StartCanvas.SetActive(false);
+        PlayHelpChange.SetActive(true);
+        Help.SetActive(false);
     }
-
-    public void Credits()
+    public void Startplay()
+    {
+        if (PlayerPrefs.GetInt("Difficulty") != 0 && PlayerPrefs.GetInt("Difficulty") != 1 && PlayerPrefs.GetInt("Difficulty") != 2) PlayerPrefs.SetInt("Difficulty", 0);
+        SceneManager.LoadScene("Game");
+    }
+    public void canvasHelp()
     {
         CreditsCanvas.SetActive(false);
         SelectionCanvas.SetActive(false);
-        StartCanvas.SetActive(true);
+        StartCanvas.SetActive(false);
+        PlayHelpChange.SetActive(false);
+        Help.SetActive(true);
+        if (Slideshow.Length < 1) play();
+        Slideshow[0].SetActive(true);
+        index = 0;
+        for (int i = 1; i < Slideshow.Length; i++)
+        {
+            Slideshow[i].SetActive(false);
+        }
     }
-
-    public void Easy()
+    public void NextSlide()
     {
-        //Salvar a dificuldade por player prefs
-        SceneManager.LoadScene("Game");
+        Slideshow[index].SetActive(false);
+        index++;
+        if (index < Slideshow.Length)
+        {
+            Slideshow[index].SetActive(true);
+        }
+        else
+        {
+            play();
+        }
     }
-
-    public void Normal()
+    public void Credits()
     {
-        //Salvar a dificuldade por player prefs
-        SceneManager.LoadScene("Game");
+        CreditsCanvas.SetActive(true);
+        SelectionCanvas.SetActive(false);
+        StartCanvas.SetActive(false);
+        PlayHelpChange.SetActive(false);
+        Help.SetActive(false);
     }
-
-    public void Hard()
+    public void Selection()
     {
-        //Salvar a dificuldade por player prefs
-        SceneManager.LoadScene("Game");
+        CreditsCanvas.SetActive(false);
+        SelectionCanvas.SetActive(true);
+        StartCanvas.SetActive(false);
+        PlayHelpChange.SetActive(false);
+        Help.SetActive(false);
+    }
+    public void Dificulty(int d)
+    {
+        PlayerPrefs.SetInt("Difficulty", d);
     }
 }
