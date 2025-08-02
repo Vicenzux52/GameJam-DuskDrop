@@ -3,9 +3,9 @@ using UnityEngine;
 public class Animal : GenericTower
 {
     int amountSpawned;
-    public override void Initialize()
+    new void Start()
     {
-        base.Initialize();
+        base.Start();
     }
     public override void Run()
     {
@@ -13,6 +13,6 @@ public class Animal : GenericTower
     }
     public override void Spawn()
     {
-        Debug.Log("nnnnnnnn");
+        Instantiate(UnitPrefab, transform.position, Quaternion.identity);
     }
 }

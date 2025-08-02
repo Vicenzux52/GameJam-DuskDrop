@@ -1,21 +1,12 @@
-using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TreeUnit : GenericUnit
 {
-    [SerializeField] GameObject target = null;
     [SerializeField] GameObject bulletPrefab;
-    void OnCollisionEnter(Collision collision)
-    {
-        if (target == null && collision.gameObject.CompareTag("Enemy"))
-        {
-            target = collision.gameObject;
-            if (cd != null)StopCoroutine(cd);
-            Attack();
-        }
-    }
     protected override void Attack()
     {
+        ChooseTarget();
         if (target != null) SpawnAttack();
         cd = Cooldown();
         StartCoroutine(cd);
@@ -28,11 +19,16 @@ public class TreeUnit : GenericUnit
         {
             float atk = damage;
             if (BuffController.Self != null) atk = damage * BuffController.Self.buffs[0];
-            bullet.Set((int)damage,target);
+            bullet.Set((int)damage, target);
         }
         else
         {
             Debug.LogError("Bullet component not found on the prefab.");
         }
+    }
+    new void OnCollisionEnter(Collision collision)
+    {
+        base.OnCollisionEnter(collision);
+        if (cd == null) Attack();
     }
 }
