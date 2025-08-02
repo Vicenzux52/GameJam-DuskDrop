@@ -17,42 +17,50 @@ public class Option : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     void OnMouseEnter()
     {
-        transform.localScale = new Vector3(transform.localScale.x * 1.2f, transform.localScale.y * 1.2f, transform.localScale.z * 1.2f);
+        transform.localScale = new Vector3(transform.localScale.x * 1.1f, transform.localScale.y * 1.1f, transform.localScale.z * 1.1f);
+        transform.parent.GetComponent<OptionOpen>().DontClose = true; // Prevent the option from closing when hovered
     }
     void OnMouseExit()
     {
-        transform.localScale = new Vector3(transform.localScale.x / 1.2f, transform.localScale.y / 1.2f, transform.localScale.z / 1.2f);
+        transform.localScale = new Vector3(transform.localScale.x / 1.1f, transform.localScale.y / 1.1f, transform.localScale.z / 1.1f);
+        transform.parent.GetComponent<OptionOpen>().DontClose = false; // Prevent the option from closing when hovered
     }
     void OnMouseUp()
     {
-        if (gameObject.GetComponent<Material>().name == "Cupuacu")
+        if (gameObject.name == "CupuacuOption")
         {
             Instantiate(CupuacuPrefab, transform.parent.parent.position, Quaternion.identity);
+            Destroy(transform.parent.parent.gameObject);
         }
-        else if (gameObject.GetComponent<Material>().name == "Guarana")
+        else if (gameObject.name == "GuaranaOption")
         {
             Instantiate(GuaranaPrefab, transform.parent.parent.position, Quaternion.identity);
+            Destroy(transform.parent.parent.gameObject);
         }
-        else if (gameObject.GetComponent<Material>().name == "Jabuticaba")
+        else if (gameObject.name == "JabuticabaOption")
         {
             Instantiate(JabuticabaPrefab, transform.parent.parent.position, Quaternion.identity);
+            Destroy(transform.parent.parent.gameObject);
         }
-        else if (gameObject.GetComponent<Material>().name == "Lobo")
+        else if (gameObject.name == "LoboOption ")
         {
-            Instantiate(LoboPrefab, transform.parent.parent.position, Quaternion.identity); 
+            Instantiate(LoboPrefab, transform.parent.parent.position, Quaternion.identity);
+            Destroy(transform.parent.parent.gameObject);
         }
-        else if (gameObject.GetComponent<Material>().name == "Onca")
+        else if (gameObject.name == "OncaOption")
         {
             Instantiate(OncaPrefab, transform.parent.parent.position, Quaternion.identity);
+            Destroy(transform.parent.parent.gameObject);
         }
-        else if (gameObject.GetComponent<Material>().name == "Sapo")
+        else if (gameObject.name == "SapoOption")
         {
             Instantiate(SapoPrefab, transform.parent.parent.position, Quaternion.identity);
+            Destroy(transform.parent.parent.gameObject);
         }
     }
 }
