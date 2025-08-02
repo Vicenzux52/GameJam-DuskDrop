@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tree : GenericTower
 {
-    List<GameObject> treeList = new List<GameObject>();
+    GameObject tree;
     new void Start()
     {
         base.Start();
@@ -16,16 +16,10 @@ public class Tree : GenericTower
     public override void Spawn()
     {
         Debug.Log("nnnnnnnn");
-        treeList.Add(Instantiate(UnitPrefab,transform.position,Quaternion.identity));
+        if(tree == null) tree = Instantiate(UnitPrefab,spawnpoint.transform.position,Quaternion.identity);
     }
     public override void Restart()
     {
-        Debug.Log("Tree Restart");
-        // Logic to restart the tree tower
-        foreach (var tree in treeList)
-        {
-            Destroy(tree);
-        }
-        treeList.Clear();
+        if (tree != null) Destroy(tree, 2);
     }
 }

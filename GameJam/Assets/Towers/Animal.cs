@@ -13,6 +13,6 @@ public class Animal : GenericTower
     }
     public override void Spawn()
     {
-        Instantiate(UnitPrefab, transform.position, Quaternion.identity);
+        Instantiate(UnitPrefab, spawnpoint.transform.position, Quaternion.identity);
     }
 }

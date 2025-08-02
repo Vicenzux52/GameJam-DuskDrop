@@ -11,7 +11,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] GameObject target;
     public bool enGarde = false;
+    bool attackNexus = false;
     public AnimalUnit combatTarget;
+    Nexus nexus;
     protected IEnumerator cd;
     void Start()
     {
@@ -31,16 +33,26 @@ public class Enemy : MonoBehaviour
         {
             speed = 1;
         }
-        if (Nexus.Self != null) target = Nexus.Self.gameObject;
+        if (Nexus.Self != null)
+        {
+            target = Nexus.Self.gameObject;
+            nexus = Nexus.Self;
+        }
     }
     void Update()
     {
+        if (attackNexus) return;
         if (enGarde && combatTarget != null)
         {
             return;
         }
         if (target != null)
         {
+            if ((target.transform.position - transform.position).magnitude < 2)
+            {
+                attackNexus = true;
+                AttackNexus();
+            }
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
         }
     }
@@ -59,8 +71,13 @@ public class Enemy : MonoBehaviour
     }
     public void Attack()
     {
-        
         if (combatTarget != null) combatTarget.Harm((int)damage);
+        cd = Cooldown();
+        StartCoroutine(cd);
+    }
+    void AttackNexus()
+    {
+        nexus.Harm((int)damage);
         cd = Cooldown();
         StartCoroutine(cd);
     }
