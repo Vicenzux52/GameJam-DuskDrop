@@ -13,6 +13,7 @@ public class Animal : GenericTower
     }
     public override void Spawn()
     {
-        Instantiate(UnitPrefab, spawnpoint.transform.position, Quaternion.identity);
+        GameObject temp = Instantiate(UnitPrefab, spawnpoint.transform.position, Quaternion.identity);
+        temp.transform.localScale = new Vector3(144,144,144);
     }
 }

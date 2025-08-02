@@ -15,6 +15,7 @@ public class TreeUnit : GenericUnit
     {
         if (damage == 0) return;
         GameObject temp = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        temp.transform.localScale = new Vector3(140, 140, 140);
         if (temp.TryGetComponent<Bullet>(out Bullet bullet))
         {
             float atk = damage;
@@ -29,6 +30,6 @@ public class TreeUnit : GenericUnit
     new void OnCollisionEnter(Collision collision)
     {
         base.OnCollisionEnter(collision);
-        if (cd == null) Attack();
+        if(collision.gameObject.CompareTag("Enemy"))if (cd == null) Attack();
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5140812934495968335}
   - component: {fileID: 311270755093728466}
   - component: {fileID: 4308665487105534140}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mesh
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3283568801329760178}
   - component: {fileID: -7558518086599216958}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GuaranaBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}

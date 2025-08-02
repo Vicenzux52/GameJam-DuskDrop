@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8743431549444498646}
   - component: {fileID: 2115240141110100698}
+  - component: {fileID: 8486719160847092011}
+  - component: {fileID: 3334404412634226561}
   m_Layer: 0
   m_Name: TowerGuarana
-  m_TagString: Untagged
+  m_TagString: Torre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,10 +49,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <TowerName>k__BackingField: Guarana
   <ImageGrid>k__BackingField: {fileID: 2100000, guid: a87118802da348c43a565eaa6600a74c, type: 2}
-  <UnitPrefab>k__BackingField: {fileID: 0}
+  <UnitPrefab>k__BackingField: {fileID: 79449237359375343, guid: d81a21acb3596d44f8eb90ddc8d5a030, type: 3}
   spawnpoint: {fileID: 0}
   debugRun: 0
   debugRestart: 0
+--- !u!65 &8486719160847092011
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175406725167678217}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3334404412634226561
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175406725167678217}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &5178700802056933192
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,7 +112,6 @@ GameObject:
   - component: {fileID: 4832053028641859849}
   - component: {fileID: 6945063556079622602}
   - component: {fileID: 5669147753748342565}
-  - component: {fileID: 1676613762406920510}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -138,24 +187,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1676613762406920510
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5178700802056933192}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

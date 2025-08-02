@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] int difficultyTreshold = 10;
     [SerializeField] float minSpawnInterval = 0.5f;
     int count = 0;
-    private float[] nextSpawnTime;
+    private float[] nextSpawnTime = new float[3];
 
     private void Start()
     {
@@ -43,7 +43,8 @@ public class Spawner : MonoBehaviour
 
     private void SpawnUnit(int spot)
     {
-        Instantiate(unitPrefabs[Random.Range(0,unitPrefabs.Length)], spots[spot].transform.position, Quaternion.identity);
+        GameObject temp = Instantiate(unitPrefabs[Random.Range(0,unitPrefabs.Length)], spots[spot].transform.position, Quaternion.identity);
+        temp.transform.localScale = new Vector3(140, 140, 140);
         count++;
         Debug.Log("Unit spawned at " + transform.position);
     }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4935778630968996105}
   - component: {fileID: 1941222227719703324}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 'JabuticabaBullet '
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 2184633210636129457}
   - component: {fileID: 2327597157264415794}
   - component: {fileID: 6895792748668471523}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mesh
   m_TagString: Bullet
   m_Icon: {fileID: 0}

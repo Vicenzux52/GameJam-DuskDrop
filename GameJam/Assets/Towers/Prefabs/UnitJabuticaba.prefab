@@ -162,7 +162,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 20, y: 20, z: 20}
+  m_Size: {x: 8000, y: 8000, z: 8000}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &930185047857554764
 MonoBehaviour:
@@ -180,9 +180,9 @@ MonoBehaviour:
   damage: 0
   attackSpeed: 0
   range: 0
-  target: {fileID: 3126809439225598765, guid: 2794ae69b671c054cafd2e15786d3089, type: 3}
+  target: {fileID: 0}
   debugAttack: 0
-  bulletPrefab: {fileID: 9215295371284536033, guid: 744908dea6a95be4586c6d368d82a8ee, type: 3}
+  bulletPrefab: {fileID: 3126809439225598765, guid: 2794ae69b671c054cafd2e15786d3089, type: 3}
 --- !u!54 &657939891034260012
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 4177801552676145600}
   m_Layer: 0
   m_Name: TowerOnca
-  m_TagString: Untagged
+  m_TagString: Torre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <TowerName>k__BackingField: "On\xE7a Pintada"
   <ImageGrid>k__BackingField: {fileID: 2100000, guid: e327cc990302f7a43ac59a13e30645d4, type: 2}
-  <UnitPrefab>k__BackingField: {fileID: 4219578010849400167, guid: 5a8dfbdd08b7ba545b3b805b27c9c322, type: 3}
+  <UnitPrefab>k__BackingField: {fileID: 4806493390181548036, guid: b6340834215bd3d4894dbacb7cf5a7e9, type: 3}
   spawnpoint: {fileID: 0}
   debugRun: 0
   debugRestart: 0

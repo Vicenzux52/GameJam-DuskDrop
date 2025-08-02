@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [HideInInspector]public int damage;
-    float speed = 2f;
+    float speed = 300f;
     [SerializeField]GameObject target;
     public void Set(int damage, GameObject target)
     {

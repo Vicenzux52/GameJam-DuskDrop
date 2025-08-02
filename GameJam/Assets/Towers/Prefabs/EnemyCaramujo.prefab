@@ -186,7 +186,7 @@ MonoBehaviour:
   life: 1
   damage: 0
   attackSpeed: 0
-  speed: 0
+  speed: 100
   target: {fileID: 0}
   enGarde: 0
   combatTarget: {fileID: 0}
