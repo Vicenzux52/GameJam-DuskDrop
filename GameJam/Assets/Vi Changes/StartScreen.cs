@@ -38,7 +38,8 @@ public class StartScreen : MonoBehaviour
     public void Startplay()
     {
         if (PlayerPrefs.GetInt("Difficulty") != 0 && PlayerPrefs.GetInt("Difficulty") != 1 && PlayerPrefs.GetInt("Difficulty") != 2) PlayerPrefs.SetInt("Difficulty", 0);
-        SceneManager.LoadScene("Game");
+        Debug.Log("Starting game with difficulty: " + PlayerPrefs.GetInt("Difficulty"));
+        SceneManager.LoadSceneAsync("Game");
     }
     public void canvasHelp()
     {
@@ -81,6 +82,14 @@ public class StartScreen : MonoBehaviour
         CreditsCanvas.SetActive(false);
         SelectionCanvas.SetActive(true);
         StartCanvas.SetActive(false);
+        PlayHelpChange.SetActive(false);
+        Help.SetActive(false);
+    }
+    public void MainMenu()
+    {
+        CreditsCanvas.SetActive(false);
+        SelectionCanvas.SetActive(false);
+        StartCanvas.SetActive(true);
         PlayHelpChange.SetActive(false);
         Help.SetActive(false);
     }

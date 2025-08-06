@@ -180,7 +180,7 @@ Transform:
   m_GameObject: {fileID: 518078}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.07, y: 0, z: 0.78}
+  m_LocalPosition: {x: 1.07, y: 0, z: 1.02}
   m_LocalScale: {x: 2, y: 5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -205,7 +205,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &518081
 MeshRenderer:
@@ -356,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 1326806060}
     - target: {fileID: 1988114693305201993, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3047990217647932925, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: Spanim
@@ -728,7 +728,7 @@ PrefabInstance:
       objectReference: {fileID: 1179080144}
     - target: {fileID: 1988114693305201993, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3047990217647932925, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: Spanim
@@ -1278,6 +1278,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HalfMoon: {fileID: 1353064324}
   FullMoon: {fileID: 518078}
+  SmallMoon1: {fileID: 1721442597}
+  SmallMoon2: {fileID: 794734573}
 --- !u!4 &778771364
 Transform:
   m_ObjectHideFlags: 0
@@ -1327,7 +1329,7 @@ Transform:
   m_GameObject: {fileID: 794734573}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9584997, y: 0, z: -1.17}
+  m_LocalPosition: {x: 0.99, y: 0, z: -1.23}
   m_LocalScale: {x: 2, y: 5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1352,7 +1354,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &794734576
 MeshRenderer:
@@ -1521,7 +1523,7 @@ PrefabInstance:
       objectReference: {fileID: 1201677539}
     - target: {fileID: 1988114693305201993, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3047990217647932925, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: Spanim
@@ -1682,7 +1684,7 @@ PrefabInstance:
       objectReference: {fileID: 137450010}
     - target: {fileID: 1988114693305201993, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3047990217647932925, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: Spanim
@@ -1906,7 +1908,7 @@ Transform:
   m_GameObject: {fileID: 1353064324}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.13, y: 0, z: -1.17}
+  m_LocalPosition: {x: -1.13, y: 0, z: -1.14}
   m_LocalScale: {x: 2, y: 5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1931,7 +1933,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1353064327
 MeshRenderer:
@@ -2051,7 +2053,7 @@ PrefabInstance:
       objectReference: {fileID: 454159}
     - target: {fileID: 1988114693305201993, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3047990217647932925, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: Spanim
@@ -2208,7 +2210,7 @@ PrefabInstance:
       objectReference: {fileID: 1064346989}
     - target: {fileID: 1988114693305201993, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3047990217647932925, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: Spanim
@@ -2365,7 +2367,7 @@ Transform:
   m_GameObject: {fileID: 1721442597}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1515001, y: 0, z: 0.8700002}
+  m_LocalPosition: {x: -1.18, y: 0, z: 0.96}
   m_LocalScale: {x: 2, y: 5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2390,7 +2392,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1721442600
 MeshRenderer:
@@ -2545,7 +2547,7 @@ PrefabInstance:
       objectReference: {fileID: 1720676025}
     - target: {fileID: 1988114693305201993, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3047990217647932925, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: Spanim
@@ -2647,7 +2649,7 @@ GameObject:
   - component: {fileID: 1922882113}
   - component: {fileID: 1922882114}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Nexus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2681,6 +2683,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 10
+  spawner: {fileID: 0}
+  moon: {fileID: 0}
 --- !u!1 &1948548889
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,6 +2746,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 10
+  spawner: {fileID: 0}
+  moon: {fileID: 0}
 --- !u!4 &1972731989
 Transform:
   m_ObjectHideFlags: 0
@@ -2827,7 +2833,7 @@ PrefabInstance:
       objectReference: {fileID: 580381984}
     - target: {fileID: 1988114693305201993, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3047990217647932925, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: Spanim
@@ -2957,7 +2963,7 @@ PrefabInstance:
       objectReference: {fileID: 1948548889}
     - target: {fileID: 1988114693305201993, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3047990217647932925, guid: d781ddcd103e0024cbf1f2f55329492f, type: 3}
       propertyPath: Spanim
