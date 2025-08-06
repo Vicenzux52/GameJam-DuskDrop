@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class OptionOpen : MonoBehaviour
@@ -5,13 +6,18 @@ public class OptionOpen : MonoBehaviour
     Vector3 OriginalScale;
     public bool DontClose = false;
     bool MouseExit = false;
+    public bool selected = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         OriginalScale = transform.localScale;
         transform.localScale = Vector3.zero; // Start with scale zero
+        this.gameObject.SetActive(false); // Deactivate the object initially
     }
-
+    public void Select()
+    {
+        selected = true;
+    }
     // Update is called once per frame
     void Update()
     {

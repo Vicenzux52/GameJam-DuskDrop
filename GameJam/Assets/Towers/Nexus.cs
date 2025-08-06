@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,6 +6,26 @@ public class Nexus : MonoBehaviour
 {
     public static Nexus Self { get; private set; }
     [SerializeField] int life = 10;
+    [SerializeField] Spawner spawner;
+    [SerializeField] MoonLightMovement moon;
+    List<UndefinedTower> options = new List<UndefinedTower>();
+    public void AddSelf(UndefinedTower option)
+    {
+        options.Add(option);
+    }
+    public void AddSelf(Spawner spawner)
+    {
+        this.spawner = spawner;
+    }
+    public void AddSelf(MoonLightMovement moon)
+    {
+        this.moon = moon;
+    }
+    public void Select(UndefinedTower me)
+    {
+        options.Remove(me);
+        if (options.Count == 0) StartCombat();
+    }
     void Awake()
     {
         if (Self == null)
@@ -15,6 +36,11 @@ public class Nexus : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+    void StartCombat()
+    {
+        if (spawner != null) spawner.StartCombat();
+        if (moon != null) moon.StartCombat();
     }
     public void Harm(int damage)
     {

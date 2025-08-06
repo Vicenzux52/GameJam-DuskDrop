@@ -7,6 +7,7 @@ public class AnimalUnit : GenericUnit
     [field: SerializeField] int life = 1;
     [field: SerializeField] protected float speed = 1f;
     bool enGarde = false;
+    bool canDoubleAttack = false;
     Enemy enemy;
     new void Start()
     {
@@ -26,13 +27,22 @@ public class AnimalUnit : GenericUnit
         ChooseTarget();
         if (target != null)
         {
-            Debug.Log("attack anim");
             float atk = damage;
             if (BuffController.Self != null) atk = damage * BuffController.Self.buffs[0];
             enemy.Harm((int)atk);
         }
+        if (canDoubleAttack) DoubleAttack();
         cd = Cooldown();
         StartCoroutine(cd);
+    }
+    void DoubleAttack()
+    {
+        if (target != null)
+        {
+            float atk = damage * 2;
+            if (BuffController.Self != null) atk = damage * 2 * BuffController.Self.buffs[0];
+            enemy.Harm((int)atk);
+        }
     }
 
     new void Update()

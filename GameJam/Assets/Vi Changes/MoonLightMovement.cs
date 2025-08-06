@@ -6,14 +6,26 @@ public class MoonLightMovement : MonoBehaviour
 {
     public GameObject HalfMoon;
     public GameObject FullMoon;
+    public GameObject SmallMoon1;
+    public GameObject SmallMoon2;
     Vector3 TargetPosition;
     Quaternion TargetRotation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if(PlayerPrefs.GetInt("Difficulty")<2)HalfMoon.SetActive(false);
-        if(PlayerPrefs.GetInt("Difficulty")==0)FullMoon.SetActive(false);
+        Nexus.Self.AddSelf(this);
+        HalfMoon.SetActive(false);
+        FullMoon.SetActive(false);
+        SmallMoon1.SetActive(false);
+        SmallMoon2.SetActive(false);
+    }
+    public void StartCombat()
+    {
+        if(PlayerPrefs.GetInt("Difficulty")<2)HalfMoon.SetActive(true);
+        if(PlayerPrefs.GetInt("Difficulty")==0)FullMoon.SetActive(true);
+        SmallMoon1.SetActive(true);
+        SmallMoon2.SetActive(true);
         TargetPosition = new Vector3(0.18f, 1, 0.18f);
     }
 

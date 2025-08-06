@@ -11,10 +11,11 @@ public class Option : MonoBehaviour
     public GameObject SapoPrefab;
     public GameObject Spanim;
     public GameObject sptorre;
+    OptionOpen father;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        father = transform.parent.GetComponent<OptionOpen>();
     }
 
     // Update is called once per frame
@@ -26,12 +27,12 @@ public class Option : MonoBehaviour
     void OnMouseEnter()
     {
         transform.localScale = new Vector3(transform.localScale.x * 1.1f, transform.localScale.y * 1.1f, transform.localScale.z * 1.1f);
-        transform.parent.GetComponent<OptionOpen>().DontClose = true; // Prevent the option from closing when hovered
+        father.DontClose = true; // Prevent the option from closing when hovered
     }
     void OnMouseExit()
     {
         transform.localScale = new Vector3(transform.localScale.x / 1.1f, transform.localScale.y / 1.1f, transform.localScale.z / 1.1f);
-        transform.parent.GetComponent<OptionOpen>().DontClose = false; // Prevent the option from closing when hovered
+        father.DontClose = false; // Prevent the option from closing when hovered
     }
     void OnMouseUp()
     {
@@ -39,42 +40,42 @@ public class Option : MonoBehaviour
         {
             GameObject temp = Instantiate(CupuacuPrefab, transform.parent.parent.position, Quaternion.identity);
             temp.GetComponent<GenericTower>().spawnpoint = sptorre;
-            temp.transform.localScale=new Vector3(200,100,200);
+            temp.transform.localScale = new Vector3(200, 100, 200);
             Destroy(transform.parent.parent.gameObject);
         }
         else if (gameObject.name == "GuaranaOption")
         {
             GameObject temp = Instantiate(GuaranaPrefab, transform.parent.parent.position, Quaternion.identity);
             temp.GetComponent<GenericTower>().spawnpoint = sptorre;
-            temp.transform.localScale=new Vector3(200,100,200);
+            temp.transform.localScale = new Vector3(200, 100, 200);
             Destroy(transform.parent.parent.gameObject);
         }
         else if (gameObject.name == "JabuticabaOption")
         {
             GameObject temp = Instantiate(JabuticabaPrefab, transform.parent.parent.position, Quaternion.identity);
             temp.GetComponent<GenericTower>().spawnpoint = sptorre;
-            temp.transform.localScale=new Vector3(200,100,200);
+            temp.transform.localScale = new Vector3(200, 100, 200);
             Destroy(transform.parent.parent.gameObject);
         }
         else if (gameObject.name == "LoboOption")
         {
             GameObject temp = Instantiate(LoboPrefab, transform.parent.parent.position, Quaternion.identity);
             temp.GetComponent<GenericTower>().spawnpoint = sptorre;
-            temp.transform.localScale=new Vector3(200,100,200);
+            temp.transform.localScale = new Vector3(200, 100, 200);
             Destroy(transform.parent.parent.gameObject);
         }
         else if (gameObject.name == "OncaOption")
         {
             GameObject temp = Instantiate(OncaPrefab, transform.parent.parent.position, Quaternion.identity);
             temp.GetComponent<GenericTower>().spawnpoint = sptorre;
-            temp.transform.localScale=new Vector3(200,100,200);
+            temp.transform.localScale = new Vector3(200, 100, 200);
             Destroy(transform.parent.parent.gameObject);
         }
         else if (gameObject.name == "SapoOption")
         {
             GameObject temp = Instantiate(SapoPrefab, transform.parent.parent.position, Quaternion.identity);
             temp.GetComponent<GenericTower>().spawnpoint = sptorre;
-            temp.transform.localScale=new Vector3(200,100,200);
+            temp.transform.localScale = new Vector3(200, 100, 200);
             Destroy(transform.parent.parent.gameObject);
         }
     }

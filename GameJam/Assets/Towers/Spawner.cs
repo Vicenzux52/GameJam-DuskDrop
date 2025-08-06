@@ -9,16 +9,23 @@ public class Spawner : MonoBehaviour
     [SerializeField] float minSpawnInterval = 0.5f;
     int count = 0;
     private float[] nextSpawnTime = new float[3];
+    bool started = false;
 
-    private void Start()
+    public void Start()
+    {
+        Nexus.Self.AddSelf(this);
+    }
+    public void StartCombat()
     {
         nextSpawnTime[0] = Time.time + spawnInterval * Random.Range(0.8f, 1.2f);
         nextSpawnTime[1] = Time.time + spawnInterval * Random.Range(0.8f, 1.2f);
         nextSpawnTime[2] = Time.time + spawnInterval * Random.Range(0.8f, 1.2f);
+        started = true;
     }
 
     private void Update()
     {
+        if (!started) return;
         if ((count + 1) % difficultyTreshold == 0)
         {
             spawnInterval -= 0.1f;
@@ -46,6 +53,5 @@ public class Spawner : MonoBehaviour
         GameObject temp = Instantiate(unitPrefabs[Random.Range(0,unitPrefabs.Length)], spots[spot].transform.position, Quaternion.identity);
         temp.transform.localScale = new Vector3(140, 140, 140);
         count++;
-        Debug.Log("Unit spawned at " + transform.position);
     }
 }
