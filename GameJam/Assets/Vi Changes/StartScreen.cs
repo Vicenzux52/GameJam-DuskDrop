@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class StartScreen : MonoBehaviour
 {
     [SerializeField] GameObject StartCanvas;
-    [SerializeField] GameObject PlayHelpChange;
+
     [SerializeField] GameObject Help;
     [SerializeField] GameObject[] Slideshow;
     [SerializeField] GameObject SelectionCanvas;
@@ -16,7 +16,6 @@ public class StartScreen : MonoBehaviour
         CreditsCanvas.SetActive(false);
         SelectionCanvas.SetActive(false);
         StartCanvas.SetActive(true);
-        PlayHelpChange.SetActive(false);
         Help.SetActive(false);
 
     }
@@ -32,7 +31,6 @@ public class StartScreen : MonoBehaviour
         CreditsCanvas.SetActive(false);
         SelectionCanvas.SetActive(false);
         StartCanvas.SetActive(false);
-        PlayHelpChange.SetActive(true);
         Help.SetActive(false);
     }
     public void Startplay()
@@ -46,7 +44,6 @@ public class StartScreen : MonoBehaviour
         CreditsCanvas.SetActive(false);
         SelectionCanvas.SetActive(false);
         StartCanvas.SetActive(false);
-        PlayHelpChange.SetActive(false);
         Help.SetActive(true);
         if (Slideshow.Length < 1) play();
         Slideshow[0].SetActive(true);
@@ -66,7 +63,7 @@ public class StartScreen : MonoBehaviour
         }
         else
         {
-            play();
+            MainMenu();
         }
     }
     public void Credits()
@@ -74,7 +71,6 @@ public class StartScreen : MonoBehaviour
         CreditsCanvas.SetActive(true);
         SelectionCanvas.SetActive(false);
         StartCanvas.SetActive(false);
-        PlayHelpChange.SetActive(false);
         Help.SetActive(false);
     }
     public void Selection()
@@ -82,7 +78,6 @@ public class StartScreen : MonoBehaviour
         CreditsCanvas.SetActive(false);
         SelectionCanvas.SetActive(true);
         StartCanvas.SetActive(false);
-        PlayHelpChange.SetActive(false);
         Help.SetActive(false);
     }
     public void MainMenu()
@@ -90,7 +85,6 @@ public class StartScreen : MonoBehaviour
         CreditsCanvas.SetActive(false);
         SelectionCanvas.SetActive(false);
         StartCanvas.SetActive(true);
-        PlayHelpChange.SetActive(false);
         Help.SetActive(false);
     }
     public void Dificulty(int d)

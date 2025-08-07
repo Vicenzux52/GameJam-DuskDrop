@@ -27,7 +27,7 @@ public class moon : MonoBehaviour
     {
         Nexus.Self.AddSelf(this);
     }
-    public void CombatStart()
+    public void StartCombat()
     {
         next = Time.time + 3;
     }
