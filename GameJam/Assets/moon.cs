@@ -25,13 +25,17 @@ public class moon : MonoBehaviour
     }
     void Start()
     {
-        next = Time.time + 5;
+        Nexus.Self.AddSelf(this);
+    }
+    public void CombatStart()
+    {
+        next = Time.time + 3;
     }
     void Update()
     {
         if (Time.time >= next)
         {
-            next = Time.time + 5;
+            next = Time.time + 3;
             foreach (var item in torres)
             {
                 item.Run();

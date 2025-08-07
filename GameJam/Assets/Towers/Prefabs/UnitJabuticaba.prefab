@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Jabuticapa
-  damage: 0
-  attackSpeed: 0
+  damage: 6
+  attackSpeed: 0.8
   range: 0
   target: {fileID: 0}
   debugAttack: 0

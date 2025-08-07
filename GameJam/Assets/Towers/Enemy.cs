@@ -8,7 +8,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] int life = 1;
     [SerializeField] float damage;
     [SerializeField] float attackSpeed;
-    [SerializeField] float speed;
+    [SerializeField] float baseSpeed;
+    [SerializeField] float acceleration;
+    [SerializeField] float maxSpeed;
+    float speed;
     [SerializeField] GameObject target;
     public bool enGarde = false;
     bool attackNexus = false;
@@ -38,6 +41,7 @@ public class Enemy : MonoBehaviour
             target = Nexus.Self.gameObject;
             nexus = Nexus.Self;
         }
+        speed = baseSpeed;
     }
     void Update()
     {
@@ -48,6 +52,8 @@ public class Enemy : MonoBehaviour
         }
         if (target != null)
         {
+            speed += acceleration * Time.deltaTime;
+            if(speed > maxSpeed && maxSpeed!=0) speed = maxSpeed;
             if ((target.transform.position - transform.position).magnitude < 2)
             {
                 attackNexus = true;
@@ -68,6 +74,7 @@ public class Enemy : MonoBehaviour
     {
         life -= damage;
         if (life < 1) Destroy(this.gameObject);
+        speed = baseSpeed; // Reset speed on harm
     }
     public void Attack()
     {

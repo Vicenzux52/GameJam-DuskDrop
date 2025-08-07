@@ -2927,6 +2927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1972731989}
   - component: {fileID: 1972731988}
+  - component: {fileID: 1972731990}
   m_Layer: 0
   m_Name: Nexus
   m_TagString: Untagged
@@ -2946,9 +2947,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 653faf847778bb042abfc66b9e48ef63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 10
+  life: 50
   spawner: {fileID: 0}
   moon: {fileID: 0}
+  run: 0
 --- !u!4 &1972731989
 Transform:
   m_ObjectHideFlags: 0
@@ -2964,6 +2966,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1755752774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1972731990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972731987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804cc068b0f47d24f97cb86c8a90ff98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buffsValues:
+  - 20
+  - 50
+  - 30
+  - 40
 --- !u!1 &2009148432
 GameObject:
   m_ObjectHideFlags: 0

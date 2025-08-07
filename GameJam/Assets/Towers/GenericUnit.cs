@@ -53,17 +53,19 @@ public class GenericUnit : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             EnemyList.Add(collision.gameObject);
-            
+            EnemyList.Sort((a, b) =>
+            {
+                if (a == null) return 1;
+                if (b == null) return -1;
+                return (int)((a.transform.position - transform.position).magnitude - (b.transform.position - transform.position).magnitude);
+            });
         }
     }
     protected void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            if (EnemyList.Contains(collision.gameObject))
-            {
-                EnemyList.Remove(collision.gameObject);
-            }
+            if (EnemyList.Contains(collision.gameObject)) EnemyList.Remove(collision.gameObject);
         }
     }
     /* void OnCollisionStay(Collision collision)

@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Guarana
-  damage: 0
-  attackSpeed: 0
+  damage: 3
+  attackSpeed: 2
   range: 0
   target: {fileID: 0}
   debugAttack: 0

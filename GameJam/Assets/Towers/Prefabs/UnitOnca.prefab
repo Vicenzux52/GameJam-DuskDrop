@@ -182,10 +182,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Onca
-  damage: 0
-  attackSpeed: 0
+  damage: 4
+  attackSpeed: 1.5
   range: 0
   target: {fileID: 0}
   debugAttack: 0
   life: 5
-  speed: 300
+  speed: 500

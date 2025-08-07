@@ -9,6 +9,7 @@ public class Nexus : MonoBehaviour
     [SerializeField] Spawner spawner;
     [SerializeField] MoonLightMovement moon;
     List<UndefinedTower> options = new List<UndefinedTower>();
+    moon moonJust;
     public void AddSelf(UndefinedTower option)
     {
         options.Add(option);
@@ -20,6 +21,10 @@ public class Nexus : MonoBehaviour
     public void AddSelf(MoonLightMovement moon)
     {
         this.moon = moon;
+    }
+    public void AddSelf(moon moon)
+    {
+        this.moonJust = moon;
     }
     public void Select(UndefinedTower me)
     {
@@ -41,6 +46,7 @@ public class Nexus : MonoBehaviour
     {
         if (spawner != null) spawner.StartCombat();
         if (moon != null) moon.StartCombat();
+        if (moonJust != null) moonJust.StartCombat();
     }
     public void Harm(int damage)
     {
@@ -50,4 +56,15 @@ public class Nexus : MonoBehaviour
             SceneManager.LoadScene("Lose");
         }
     }
+#if UNITY_EDITOR
+    public bool run = false;
+    void Update()
+    {
+        if (run)
+        {
+            run = false;
+            StartCombat();
+        }
+    }
+#endif
 }

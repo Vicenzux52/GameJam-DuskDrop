@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Cupuacu
-  damage: 0
-  attackSpeed: 0
+  damage: 10
+  attackSpeed: 0.5
   range: 0
   target: {fileID: 0}
   debugAttack: 0

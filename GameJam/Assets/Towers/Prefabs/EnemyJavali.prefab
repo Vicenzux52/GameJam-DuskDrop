@@ -183,10 +183,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: 
   enemyDescription: 
-  life: 1
-  damage: 0
-  attackSpeed: 0
-  speed: 200
+  life: 10
+  damage: 3
+  attackSpeed: 1.5
+  baseSpeed: 100
+  acceleration: 100
+  maxSpeed: 300
   target: {fileID: 0}
   enGarde: 0
   combatTarget: {fileID: 0}

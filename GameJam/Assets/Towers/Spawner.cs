@@ -30,6 +30,7 @@ public class Spawner : MonoBehaviour
         {
             spawnInterval -= 0.1f;
             if (spawnInterval <= minSpawnInterval) spawnInterval = minSpawnInterval;
+            difficultyTreshold += 5;
         }
         if (Time.time >= nextSpawnTime[0])
         {

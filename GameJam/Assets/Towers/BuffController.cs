@@ -37,7 +37,7 @@ public class BuffController : MonoBehaviour
             Debug.LogError("Invalid buff type: " + buffType);
             return;
         }
-        buffs[buffType]+= buffsValues[buffType]/100;
+        buffs[buffType] += buffsValues[buffType] / 100;
     }
     public void RemoveBuff(int buffType)
     {
@@ -48,11 +48,23 @@ public class BuffController : MonoBehaviour
         }
         if (buffs[buffType] > 0)
         {
-            buffs[buffType]-= buffsValues[buffType]/100;
+            buffs[buffType] -= buffsValues[buffType] / 100;
         }
         else
         {
             Debug.LogWarning("Attempted to remove a buff that is not present: " + buffsNames[buffType]);
         }
+    }
+    void Start()
+    {
+        if (PlayerPrefs.GetInt("Difficulty") == 1)
+        {
+            buffs[0] = 2f; // Increase damage buff by 20% for Hard mode
+        }
+        else if (PlayerPrefs.GetInt("Difficulty") == 2)
+        {
+            buffs[0] = 3f; // Increase damage buff by 30% for Insane mode
+        }
+        
     }
 }

@@ -182,10 +182,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Sapo
-  damage: 0
-  attackSpeed: 0
+  damage: 2
+  attackSpeed: 0.5
   range: 0
   target: {fileID: 0}
   debugAttack: 0
-  life: 5
-  speed: 150
+  life: 15
+  speed: 200

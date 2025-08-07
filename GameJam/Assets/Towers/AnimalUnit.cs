@@ -7,7 +7,6 @@ public class AnimalUnit : GenericUnit
     [field: SerializeField] int life = 1;
     [field: SerializeField] protected float speed = 1f;
     bool enGarde = false;
-    bool canDoubleAttack = false;
     Enemy enemy;
     new void Start()
     {
@@ -31,18 +30,8 @@ public class AnimalUnit : GenericUnit
             if (BuffController.Self != null) atk = damage * BuffController.Self.buffs[0];
             enemy.Harm((int)atk);
         }
-        if (canDoubleAttack) DoubleAttack();
         cd = Cooldown();
         StartCoroutine(cd);
-    }
-    void DoubleAttack()
-    {
-        if (target != null)
-        {
-            float atk = damage * 2;
-            if (BuffController.Self != null) atk = damage * 2 * BuffController.Self.buffs[0];
-            enemy.Harm((int)atk);
-        }
     }
 
     new void Update()
@@ -66,7 +55,10 @@ public class AnimalUnit : GenericUnit
                 return;
             }
             else { enGarde = false; }
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            Vector3 temp = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            if (temp.x>750) temp.x = this.transform.position.x;
+            if (temp.z>450||temp.z<-450) temp.z = this.transform.position.z;
+            transform.position = temp;
 
         }
         else
